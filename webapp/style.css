@@ -1,0 +1,80 @@
+/* Global Button Styling */
+button[kind="primary"] {
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%) !important;
+    color: #0b101e !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    border: none !important;
+    padding: 0.5rem 1rem !important;
+    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+button[kind="primary"]:hover {
+    transform: scale(1.03) !important;
+    box-shadow: 0 6px 20px rgba(0, 242, 254, 0.6) !important;
+}
+
+button[kind="secondary"] {
+    border-radius: 8px !important;
+    border: 1px solid rgba(0, 242, 254, 0.3) !important;
+    background: rgba(0, 242, 254, 0.05) !important;
+    color: #e2e8f0 !important;
+    transition: all 0.3s ease !important;
+}
+
+button[kind="secondary"]:hover {
+    background: rgba(0, 242, 254, 0.15) !important;
+    transform: scale(1.02) !important;
+    border-color: #00f2fe !important;
+}
+
+/* Metric Card Glassmorphism */
+div[data-testid="metric-container"] {
+    background: rgba(255, 255, 255, 0.02) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+div[data-testid="metric-container"]:hover {
+    transform: translateY(-4px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 12px 40px 0 rgba(0, 242, 254, 0.1) !important;
+}
+
+/* Title text enhancements */
+h1, h2, h3 {
+    letter-spacing: -0.02em !important;
+    font-weight: 800 !important;
+}
+
+/* Inputs */
+div[data-baseweb="input"] {
+    background-color: #0b101e !important;
+    border: 1px solid rgba(0, 242, 254, 0.2) !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+}
+
+div[data-baseweb="input"]:focus-within {
+    border-color: #00f2fe !important;
+    box-shadow: 0 0 0 2px rgba(0, 242, 254, 0.3) !important;
+}
+
+/* Sidebar overriding */
+section[data-testid="stSidebar"] {
+    background-color: #111827 !important;
+    border-right: 1px solid rgba(255,255,255,0.05) !important;
+}
+
+/* Base App Wrapper glow background */
+.stApp {
+    background: radial-gradient(circle at top right, rgba(0, 242, 254, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at bottom left, rgba(79, 172, 254, 0.05) 0%, transparent 40%) !important;
+}
+
+/* Plotly charts will be customized in python via template='plotly_dark' */
