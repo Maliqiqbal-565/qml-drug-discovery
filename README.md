@@ -12,10 +12,10 @@ This project explores **Quantum Machine Learning (QML)** techniques for molecula
 - Evaluate quantum advantage in feature encoding efficiency
 
 ### 📊 Team
- **Mohammad Maliq Iqbal Hussain** (25215A0520)
+ 
+- **Mohammad Maliq Iqbal Hussain** (25215A0520)
 - **Jatla Radhika** (24211A05M6)
 - **Katla Ravitrayini** (24211A05R9)
--
 
 **Guide:** Dr. Swathi Mummadi  
 **Institution:** B V Raju Institute of Technology - Department of CSE
