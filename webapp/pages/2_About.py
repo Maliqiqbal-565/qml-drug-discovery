@@ -1,8 +1,8 @@
+import os
 import streamlit as st
 
 st.set_page_config(page_title="About QML Drug Discovery", layout="wide")
 
-import os
 
 def load_css():
     css_path = os.path.join(os.path.dirname(__file__), '..', 'style.css')
@@ -10,9 +10,11 @@ def load_css():
         with open(css_path) as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
+
 load_css()
 
-st.markdown('<h1 class="main-header">About Our Platform</h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="main-header">About Our Platform</h1>',
+            unsafe_allow_html=True)
 
 st.markdown("### Quantum Machine Learning for Drug Discovery")
 st.write("This platform is built using cutting-edge Quantum Machine Learning (QML) libraries including **Qiskit**, **PennyLane**, and **Streamlit** to revolutionize how we approach molecular property prediction.")

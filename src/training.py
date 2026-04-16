@@ -14,6 +14,7 @@ class FocalLoss(torch.nn.Module):
     on hard (minority class) examples.
     gamma=2.0 is standard; alpha handled via class_weights.
     """
+
     def __init__(self, weight=None, gamma=2.0):
         super().__init__()
         self.weight = weight
@@ -99,11 +100,11 @@ def train_model(model, X_train, X_full_train, y_train, X_test, X_full_test, y_te
         with torch.no_grad():
             test_pred_logits = model(X_test_t, X_full_test_t)
             test_loss = loss_fn(test_pred_logits, y_test_t)
-            
+
             # Apply Inference Calibration
             calibrated_logits = test_pred_logits * calibration_boost
             _, test_pred_class = torch.max(calibrated_logits, 1)
-            
+
             acc = accuracy_score(y_test, test_pred_class.numpy())
 
         losses['train'].append(train_loss)

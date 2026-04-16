@@ -20,6 +20,7 @@ class AmplitudeVQC(nn.Module):
     Classical post-processing uses the 1024-bit fingerprints
     projected to 16 dims to supplement the quantum answer.
     """
+
     def __init__(self, n_qubits=3, n_rounds=4):
         super().__init__()
         self.n_qubits = n_qubits

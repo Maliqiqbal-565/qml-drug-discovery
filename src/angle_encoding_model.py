@@ -1,6 +1,4 @@
-import torch
 import torch.nn as nn
-import torch.nn.functional as F
 import pennylane as qml
 
 
@@ -22,6 +20,7 @@ class DataReuploadingVQC(nn.Module):
     Total classical parameters: 8x3 + 3 = 27
     This is a genuinely quantum model.
     """
+
     def __init__(self, n_qubits=8, n_rounds=4):
         super().__init__()
         self.n_qubits = n_qubits
