@@ -1,42 +1,42 @@
-# Quantum Model Configuration
+# Quantum Hybrid Model Configuration (EUOS-SLAS)
+
 quantum:
+  diff_method: "adjoint"
+  evaluation_mode: "hybrid-resnet"
+  
   angle_encoding:
-    n_qubits: 8
-    n_layers: 2
-    learning_rate: 0.01
-    epochs: 50
+    n_qubits: 8      # Maps to 8 PCA components
+    n_layers: 4      # Data Re-uploading Depth
+    learning_rate: 0.005
+    epochs: 30
     
   amplitude_encoding:
-    n_qubits: 3  # 2^3 = 8 features
-    n_layers: 2
-    learning_rate: 0.01
-    epochs: 50
+    n_qubits: 3      # 2^3 = 8 features
+    n_layers: 4      # Data Re-uploading Depth
+    learning_rate: 0.005
+    epochs: 30
 
-# Data Configuration
 data:
-  dataset: "delaney"  # or "qm9"
+  dataset: "euos-slas-drug-solubility"
   test_size: 0.2
   random_state: 42
   features:
-    - "MolWt"
-    - "MolLogP"
-    - "NumHAcceptors"
-    - "NumHDonors"
-    - "NumRotatableBonds"
-    - "NumHeteroatoms"
-    - "HeavyAtomCount"
-    - "NumSaturatedHeterocycles"
+    - "Morgan_Fingerprints_1024"
+    - "PCA_8_Components"
+  preprocessing:
+    balanced_downsampling: false
+    class_weights_active: true
 
-# Training Configuration
 training:
   batch_size: 32
   optimizer: "adam"
-  loss_function: "mse"
-  early_stopping: true
-  patience: 10
+  weight_decay: 1e-5
+  loss_function: "cross_entropy_weighted"
+  scheduler: "ReduceLROnPlateau"
+  scheduler_mode: "min_test_loss"
 
-# Results
 results:
   save_models: true
   save_predictions: true
   generate_plots: true
+  track_f1_macro: true
